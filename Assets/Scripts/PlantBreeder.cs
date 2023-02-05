@@ -55,7 +55,7 @@ public class PlantBreeder : MonoBehaviour
     {
         if ((parent1 == null || parent2 == null) || (parent1 == parent2) || (plantManager.userPlants.Count >= 14)) return; //cannot be null or the same
         //figure out what to pass to the baby
-        Color newflowerColor = Color.LerpUnclamped(parent1.flowerColor, parent2.flowerColor, Random.Range(.2f, 1.5f));
+        Color newflowerColor = Color.LerpUnclamped(parent1.flowerColor, parent2.flowerColor, Random.Range(0f, 1f));
         Sprite newflowerSprite = parent1.flowerSprite;
         Sprite stemSprite = parent1.stemSprite;
 

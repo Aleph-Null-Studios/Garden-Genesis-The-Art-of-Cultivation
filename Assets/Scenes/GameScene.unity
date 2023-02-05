@@ -6180,7 +6180,7 @@ MonoBehaviour:
     size: 1
     sizeIncrement: 0.2
   - name: Rose
-    flowerColor: {r: 0.4716981, g: 0.14417942, b: 0.14417942, a: 1}
+    flowerColor: {r: 0.9339623, g: 0.10044494, b: 0.10044494, a: 1}
     flowerSprite: {fileID: 21300000, guid: 4a315a24ea5ad0d42a8e2ab81f573711, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
     price: 50
@@ -6192,7 +6192,7 @@ MonoBehaviour:
     size: 1
     sizeIncrement: 0.2
   - name: Violets
-    flowerColor: {r: 0.5188679, g: 0.11454252, b: 0.43931141, a: 1}
+    flowerColor: {r: 0.9056604, g: 0.11448912, b: 0.7520349, a: 1}
     flowerSprite: {fileID: 21300000, guid: a4c1471fb158ec344ac51d79289950c2, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
     price: 50
@@ -6204,7 +6204,7 @@ MonoBehaviour:
     size: 1
     sizeIncrement: 0.2
   - name: Lilac
-    flowerColor: {r: 0.51152533, g: 0.8301887, b: 0.4965468, a: 1}
+    flowerColor: {r: 0.12298965, g: 0.8301887, b: 0.09711638, a: 1}
     flowerSprite: {fileID: 21300000, guid: b39ea5db79241544c9d3dca0c9b17033, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
     price: 50
@@ -6216,7 +6216,7 @@ MonoBehaviour:
     size: 1
     sizeIncrement: 0.2
   - name: Lilly
-    flowerColor: {r: 0.28911853, g: 0.24104661, b: 0.5754717, a: 1}
+    flowerColor: {r: 0.117906675, g: 0.80737275, b: 0.8679245, a: 1}
     flowerSprite: {fileID: 21300000, guid: b39ea5db79241544c9d3dca0c9b17033, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
     price: 50

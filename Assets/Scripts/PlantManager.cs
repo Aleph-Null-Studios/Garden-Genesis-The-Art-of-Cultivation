@@ -20,8 +20,14 @@ public class PlantManager : MonoBehaviour
             // No dont kill yourself your so sexy ahah
             DontDestroyOnLoad(gameObject);
         }
-        userPlants.Add(defaultPlants[0]);
-        userPlants.Add(defaultPlants[1]);
+
+        foreach (var item in defaultPlants)
+        {
+            userPlants.Add(item);
+        }
+        {
+
+        }
     }
 
     public void IncrementPlantAge(int days) {
@@ -37,14 +43,5 @@ public class PlantManager : MonoBehaviour
     {
         userPlants.Remove(plant);
         GetComponent<GardenManager>().SetPlant();
-    }
-
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-            
     }
 }

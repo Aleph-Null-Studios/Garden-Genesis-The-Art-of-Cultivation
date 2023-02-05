@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class MoneyManager : MonoBehaviour
 {
@@ -82,7 +83,8 @@ public class MoneyManager : MonoBehaviour
         {
             //they win
             gameOver = true;
-
+            // Load game over scene.
+            SceneManager.LoadScene(2);
         }//end if
 
         else
