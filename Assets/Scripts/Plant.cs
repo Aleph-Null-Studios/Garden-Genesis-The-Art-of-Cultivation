@@ -13,7 +13,6 @@ public class Plant : MonoBehaviour
     void Start()
     {
         if (plantData == null) {
-            Debug.Log("You fucked up");
             // Set default plant
             return;
         }
