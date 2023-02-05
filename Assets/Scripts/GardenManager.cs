@@ -11,7 +11,7 @@ public class GardenManager : MonoBehaviour
     public List<GameObject> gardenPlants;
     [SerializeField] PlantManager plantManager;
     [SerializeField] GameObject GardenUICanvas;
-    [SerializeField] GameObject PopupCard;
+    [SerializeField] public GameObject PopupCard;
 
     [SerializeField] public GameObject selectedPlant;
     [SerializeField] TextMeshProUGUI plantName;

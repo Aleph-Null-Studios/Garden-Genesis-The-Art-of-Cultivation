@@ -24,6 +24,7 @@ public class PlantData
 		this.flowerSprite = flowerSprite;
 		this.stemSprite = stemSprite;
 		this.daysGrown = daysGrown;
+		this.price = 20;
 		this.lifeCycle = Random.Range(minLifeCycle, maxLifeCycle);
 	}
 
@@ -39,7 +40,24 @@ public class PlantData
     }
 
 	public int GetPlantPrice() {
-		return price;
+		float H;
+		float S;
+		float V;
+
+		Color.RGBToHSV(flowerColor, out H, out S, out V);
+
+		Debug.Log(H);
+		Debug.Log(S);
+		Debug.Log(V);
+
+		var multiplier = (1 + S) * (1 + V); 
+
+		if (V >= .9)
+        {
+			multiplier = 4;
+        }
+		//var calculatedPrice = 
+		return Mathf.CeilToInt(price * multiplier);
 	}
 
 	// Increment the age of the plant by number of days passed by DateController.cs
