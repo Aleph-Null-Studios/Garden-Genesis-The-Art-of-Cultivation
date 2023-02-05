@@ -12,7 +12,9 @@ public class PlantBreeder : MonoBehaviour
     PlantManager plantManager;
 
     public GameObject breedMenu;
+    public GameObject breedBg;
     public GameObject mainMenu;
+    public GameObject mainBg;
     #endregion
 
     #region Unity Methods
@@ -63,7 +65,9 @@ public class PlantBreeder : MonoBehaviour
     public void ShowBreedingMenu()
     {
         mainMenu.SetActive(false);
+        mainBg.SetActive(false);
         breedMenu.SetActive(true);
+        breedBg.SetActive(true);
         GetComponent<GardenManager>().PopupCard.SetActive(false);
         GetComponent<GardenManager>().ClearPlant();
     }
@@ -71,7 +75,9 @@ public class PlantBreeder : MonoBehaviour
     public void HideBreedingMenu()
     {
         mainMenu.SetActive(true);
+        mainBg.SetActive(true);
         breedMenu.SetActive(false);
+        breedBg.SetActive(false);
         GetComponent<GardenManager>().SetPlant();
     }
     #endregion
