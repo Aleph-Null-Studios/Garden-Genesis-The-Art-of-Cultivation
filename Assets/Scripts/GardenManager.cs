@@ -77,7 +77,6 @@ public class GardenManager : MonoBehaviour
 
     public void DestroyPlant(PlantData plant)
     {
-        Debug.Log("Destroying Plant");
         plantManager.userPlants.Remove(plant);
         SetPlant();
     }

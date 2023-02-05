@@ -38,7 +38,22 @@ public class PlantData
 		return 1;
     }
 
-	public int getPlantPrice() {
+	public int GetPlantPrice() {
 		return price;
+	}
+
+	// Increment the age of the plant by number of days passed by DateController.cs
+	public bool IncrementPlantAge(int days) {
+		if (lifeCycle == 0) {
+			lifeCycle = Random.Range(minLifeCycle, maxLifeCycle);
+			Debug.Log(lifeCycle);
+		}
+
+		daysGrown += days;
+
+		if (daysGrown > lifeCycle) {
+			return true;
+		}
+		return false;
 	}
 }

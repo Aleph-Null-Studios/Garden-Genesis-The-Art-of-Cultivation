@@ -24,6 +24,21 @@ public class PlantManager : MonoBehaviour
         userPlants.Add(defaultPlants[1]);
     }
 
+    public void IncrementPlantAge(int days) {
+        // Do stuff
+        for (int i = 0; i < userPlants.Count; i++) {
+            if (userPlants[i].IncrementPlantAge(days)) {
+                DestroyPlant(userPlants[i]);
+            }
+        }
+    }
+
+    public void DestroyPlant(PlantData plant)
+    {
+        userPlants.Remove(plant);
+        GetComponent<GardenManager>().SetPlant();
+    }
+
     void Start()
     {
     }

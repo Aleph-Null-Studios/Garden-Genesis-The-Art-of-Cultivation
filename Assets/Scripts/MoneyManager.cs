@@ -39,7 +39,7 @@ public class MoneyManager : MonoBehaviour
         Plant plant = gardenManager.selectedPlant.GetComponent<Plant>();
 
         //increase the current balance
-        currentBalance += plant.plantData.price;
+        currentBalance += plant.plantData.GetPlantPrice();
         gardenManager.DestroyPlant(plant.plantData);
 
         DisplayBalance();

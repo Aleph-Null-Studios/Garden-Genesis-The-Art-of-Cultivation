@@ -2713,6 +2713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dateText: {fileID: 5532712}
+  plants: {fileID: 1111621757}
 --- !u!4 &1111621756
 Transform:
   m_ObjectHideFlags: 0
@@ -2742,7 +2743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantPrefab: {fileID: 0}
   defaultPlants:
-  - name: Daisy
+  - name: Im strokin my dick rn
     flowerColor: {r: 1, g: 0.8598435, b: 0, a: 0}
     flowerSprite: {fileID: 21300000, guid: 54f890c59db75af49b50a0d719320abf, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
@@ -2754,7 +2755,7 @@ MonoBehaviour:
     minSize: 2
     size: 1
     sizeIncrement: 0.2
-  - name: Rose
+  - name: I Got lotion on my dick rn
     flowerColor: {r: 1, g: 0, b: 0, a: 1}
     flowerSprite: {fileID: 21300000, guid: 4a315a24ea5ad0d42a8e2ab81f573711, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}

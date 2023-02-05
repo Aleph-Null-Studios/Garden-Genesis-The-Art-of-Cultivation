@@ -10,6 +10,8 @@ public class DateController : MonoBehaviour
     /*variables*/
     [SerializeField] TextMeshProUGUI dateText;  //displays the current date
 
+    [SerializeField] PlantManager plants;
+
     //date
     int curYear;                //which year it currently is 
     int curMonth;               //which month it currently is (of the year)
@@ -88,6 +90,7 @@ public class DateController : MonoBehaviour
 
         //update the text on screen
         DisplayDateText();
+        IncreasePlantAge(numDaysChanging);
 
     }//end of increase time method
 
@@ -96,6 +99,10 @@ public class DateController : MonoBehaviour
     {
         return totalDays;
     }//end get total day method
+
+    private void IncreasePlantAge(int days) {
+        plants.IncrementPlantAge(days);
+    }
 
 
 }//end of class 
