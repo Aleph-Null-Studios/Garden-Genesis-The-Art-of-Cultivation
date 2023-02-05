@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlantBreeder : MonoBehaviour
 {
@@ -10,6 +12,11 @@ public class PlantBreeder : MonoBehaviour
     public PlantData parent2;
     
     PlantManager plantManager;
+
+    public List<GameObject> gardenPlants;
+
+    public GameObject parent1Image;
+    public GameObject parent2Image;
 
     public GameObject breedMenu;
     public GameObject breedBg;
@@ -64,12 +71,18 @@ public class PlantBreeder : MonoBehaviour
 
     public void ShowBreedingMenu()
     {
+        GardenManager manager = GetComponent<GardenManager>(); 
         mainMenu.SetActive(false);
         mainBg.SetActive(false);
         breedMenu.SetActive(true);
         breedBg.SetActive(true);
-        GetComponent<GardenManager>().PopupCard.SetActive(false);
-        GetComponent<GardenManager>().ClearPlant();
+        manager.PopupCard.SetActive(false);
+        manager.ClearPlant();
+
+        parent1 = manager.selectedPlant.GetComponent<Plant>().plantData;
+        parent1Image.GetComponent<Image>().sprite = parent1.flowerSprite;
+        parent1Image.GetComponent<Image>().color = parent1.flowerColor;
+        ShowPlants();
     }
 
     public void HideBreedingMenu()
@@ -79,6 +92,41 @@ public class PlantBreeder : MonoBehaviour
         breedMenu.SetActive(false);
         breedBg.SetActive(false);
         GetComponent<GardenManager>().SetPlant();
+        HidePlants();
+    }
+
+    void ShowPlants() {
+        for (int i = 0; i < plantManager.userPlants.Count; i++)
+        {
+            var temp = plantManager.userPlants[i];
+
+            gardenPlants[i].GetComponent<Image>().sprite = temp.flowerSprite;
+            gardenPlants[i].GetComponent<Image>().color = temp.flowerColor;
+            gardenPlants[i].GetComponentInChildren<TextMeshProUGUI>().text = temp.name;
+
+            gardenPlants[i].SetActive(true);
+        }
+    }
+
+    void HidePlants() {
+        for (int i = 0; i < plantManager.userPlants.Count; i++)
+        {
+            parent1 = null;
+            parent2 = null;
+            gardenPlants[i].SetActive(false);
+        }
+    }
+
+    public void ClickPlant(int index) {
+        Debug.Log(index);
+        parent2 = plantManager.userPlants[index];
+        parent2Image.GetComponent<Image>().sprite = parent2.flowerSprite;
+        parent2Image.GetComponent<Image>().color = parent2.flowerColor;
+    }
+
+    void ClearButtons() {
+        parent2Image.GetComponent<Image>().sprite = null;
+        parent2Image.GetComponent<Image>().color = Color.white;
     }
     #endregion
 }
