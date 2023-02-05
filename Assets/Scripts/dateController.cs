@@ -20,13 +20,13 @@ public class dateController : MonoBehaviour
     /*Customizable Variables*/
 
     //max time restraints
-    int numMonthsInYear = 12;   //Number of months in each year
-    int numDaysInMonth = 23;    //Number of days in each month
+    int numMonthsInYear = 18;   //Number of months in each year
+    int numDaysInMonth = 30;    //Number of days in each month (please do not pick a prime number because it breaks the system)
 
     //starting date 
     int startYear = 2023;       //starting year
-    int startMonth = 1;         //starting month (must be equal to or less than number of months in each year)
-    int startDay = 1;           //starting day (must be equal to or less than the number of days in each month)
+    int startMonth = 2;         //starting month (must be equal to or less than number of months in each year)
+    int startDay = 3;           //starting day (must be equal to or less than the number of days in each month)
 
     
     /*Methods*/
@@ -41,7 +41,10 @@ public class dateController : MonoBehaviour
         curYear = startYear;    
         curMonth = startMonth;
         curDay = startDay;
-    
+
+        //update the display of the date on screen
+        dateText.text = $"{curMonth}/{curDay}/{curYear}";
+
     }//end of start method
 
 
