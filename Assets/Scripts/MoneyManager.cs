@@ -10,7 +10,7 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currencyBalanceText;  //displays the current balance/ammount of money the player has
 
     int startingBalance = 350;    //how much money the player starts with
-    int currnetBalance;           //how much money the player currently has
+    int currentBalance;           //how much money the player currently has
     int goalBalance = 2000;       //how much money the player needs to have to win
 
     bool gameOver = false;        //when the player makes enough money they win the game 
@@ -19,7 +19,7 @@ public class MoneyManager : MonoBehaviour
     void Start()
     {
         //set the starting current balance
-        currnetBalance = startingBalance;
+        currentBalance = startingBalance;
 
         //show balance on screen
         DisplayBalance();
@@ -28,14 +28,21 @@ public class MoneyManager : MonoBehaviour
     //display balance text is called at the start and also when the balance changes
     private void DisplayBalance()
     {
-        currencyBalanceText.text = $"${currnetBalance}";
+        currencyBalanceText.text = $"${currentBalance}";
     }//end display balance tmethod
 
     //this method is called whenever a player chooses to sell a plant
-    public void SellPlant(int plantPrice)
+    public void SellPlant()
     {
+        // Variable used multiple times
+        GardenManager gardenManager = GetComponent<GardenManager>();
+        Plant plant = gardenManager.selectedPlant.GetComponent<Plant>();
+
         //increase the current balance
-        currnetBalance += plantPrice;
+        currentBalance += plant.plantData.price;
+        gardenManager.DestroyPlant(plant.plantData);
+
+        DisplayBalance();
 
         //check to see if they won
         HasEnoughToWin();
@@ -49,10 +56,10 @@ public class MoneyManager : MonoBehaviour
         bool isSuccessfulTransaction;
 
         //check to see if they have enough money to buy the plant
-        if(currnetBalance >= plantPrice)
+        if(currentBalance >= plantPrice)
         {
             //update balance
-            currnetBalance -= plantPrice;
+            currentBalance -= plantPrice;
 
             //mark the transation as succesful
             isSuccessfulTransaction = true;
@@ -71,7 +78,7 @@ public class MoneyManager : MonoBehaviour
     void HasEnoughToWin()
     {
         //if they met the goal to win the game
-        if(currnetBalance >= goalBalance)
+        if(currentBalance >= goalBalance)
         {
             //they win
             gameOver = true;

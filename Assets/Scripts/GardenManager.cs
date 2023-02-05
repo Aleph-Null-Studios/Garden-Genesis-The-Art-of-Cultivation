@@ -65,11 +65,35 @@ public class GardenManager : MonoBehaviour
     // This is a horrible name, too bad!
     public void SetPlant()
     {
+        ClearPlant();
+
         for (int i = 0; i < plantManager.userPlants.Count; i++)
         {
             var temp = gardenPlants[i].GetComponent<Plant>();
             temp.plantData = plantManager.userPlants[i];
             temp.RenderPlant();
+        }
+    }
+
+    public void DestroyPlant(PlantData plant)
+    {
+        Debug.Log("Destroying Plant");
+        plantManager.userPlants.Remove(plant);
+        SetPlant();
+    }
+
+    public void ClearPlant()
+    {
+        foreach (var plant in gardenPlants)
+        {
+            SpriteRenderer[] sprites = plant.GetComponentsInChildren<SpriteRenderer>();
+
+            foreach (var sprite in sprites)
+            {
+                sprite.sprite = null;
+            }
+
+            PopupCard.SetActive(false);
         }
     }
 }
