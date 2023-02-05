@@ -10,6 +10,9 @@ public class PlantBreeder : MonoBehaviour
     public PlantData parent2;
     
     PlantManager plantManager;
+
+    public GameObject breedMenu;
+    public GameObject mainMenu;
     #endregion
 
     #region Unity Methods
@@ -42,7 +45,7 @@ public class PlantBreeder : MonoBehaviour
     {
         if ((parent1 == null || parent2 == null) || (parent1 == parent2) || (plantManager.userPlants.Count >= 14)) return; //cannot be null or the same
         //figure out what to pass to the baby
-        Color newflowerColor = Color.Lerp(parent1.flowerColor, parent2.flowerColor, Random.Range(.3f, .7f));
+        Color newflowerColor = Color.LerpUnclamped(parent1.flowerColor, parent2.flowerColor, Random.Range(.2f, 1.5f));
         Sprite newflowerSprite = parent1.flowerSprite;
         Sprite stemSprite = parent1.stemSprite;
 
@@ -55,6 +58,21 @@ public class PlantBreeder : MonoBehaviour
         // Set parents to null.
         parent1 = null;
         parent2 = null;
+    }
+
+    public void ShowBreedingMenu()
+    {
+        mainMenu.SetActive(false);
+        breedMenu.SetActive(true);
+        GetComponent<GardenManager>().PopupCard.SetActive(false);
+        GetComponent<GardenManager>().ClearPlant();
+    }
+
+    public void HideBreedingMenu()
+    {
+        mainMenu.SetActive(true);
+        breedMenu.SetActive(false);
+        GetComponent<GardenManager>().SetPlant();
     }
     #endregion
 }

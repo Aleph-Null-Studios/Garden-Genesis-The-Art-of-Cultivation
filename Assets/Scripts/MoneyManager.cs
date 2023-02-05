@@ -9,9 +9,9 @@ public class MoneyManager : MonoBehaviour
     /*Variables*/
     [SerializeField] TextMeshProUGUI currencyBalanceText;  //displays the current balance/ammount of money the player has
 
-    int startingBalance = 350;    //how much money the player starts with
+    int startingBalance = 0;    //how much money the player starts with
     int currentBalance;           //how much money the player currently has
-    int goalBalance = 2000;       //how much money the player needs to have to win
+    int goalBalance = 20000;       //how much money the player needs to have to win
 
     bool gameOver = false;        //when the player makes enough money they win the game 
 
