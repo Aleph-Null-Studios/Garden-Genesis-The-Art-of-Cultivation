@@ -28,7 +28,6 @@ public class CutSceneManager : MonoBehaviour
 
         if(index == Scenes.Length)
         {
-            Debug.Log("Based");
            FindObjectOfType<MainMenuController>().GetComponent<MainMenuController>().ClickStartButton();
         }
         if (index != clips.Length) 
