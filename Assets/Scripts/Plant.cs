@@ -1,46 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-///<summary>
-/// 
-///</summary>
-[System.Serializable]
-public class Plant
+public class Plant : MonoBehaviour
 {
-	public string name;
-	public Color flowerColor;
-	public Sprite flowerSprite;
-	public Sprite stemSprite;
-	//public Sprite leafSprite;
-	public float size = 1;
-	private int dayGrown;
-	public int lifeCycle;
+    public PlantData plantData;
+    BoxCollider2D clickMeDaddy;
 
+    [SerializeField] GameObject renderFlowerPrefab;
+    [SerializeField] GameObject renderStemPrefab;
 
-	public Plant(Color flowerColor, Sprite flowerSprite, Sprite stemSprite, /*Sprite leafSprite,*/ float size, int daysToGrow, int lifeCycle)
-	{
-		name = RandomizeName();
-		this.flowerColor = flowerColor;
-		this.flowerSprite = flowerSprite;
-		this.stemSprite = stemSprite;
-		//this.leafSprite = leafSprite;
-		this.size = ClampSize(size);
-		this.dayGrown = daysToGrow; // + DateController.day;
-		this.lifeCycle = lifeCycle; // + DateController.day;
-	}
-
-	public float ClampSize(float size, float minSize = .1f, float maxSize = 5f)
+    void Start()
     {
-		return Mathf.Clamp(size, minSize, maxSize);
+        if (plantData == null) {
+            Debug.Log("You fucked up");
+            // Set default plant
+            return;
+        }
+        clickMeDaddy = GetComponent<BoxCollider2D>();
     }
 
-	public string RandomizeName()
-    {
-		return "Mine Cocketh and Nuteth";
+    public void RenderPlant() {
+        var flowerRenderer = renderFlowerPrefab.GetComponent<SpriteRenderer>();
+        flowerRenderer.sprite = plantData.flowerSprite;
+        flowerRenderer.color = new Color(plantData.flowerColor.r, plantData.flowerColor.g, plantData.flowerColor.b, 255);
+
+        var stemRenderer = renderStemPrefab.GetComponent<SpriteRenderer>();
+        stemRenderer.sprite = plantData.stemSprite;
     }
 
-	public float GetGrowthStage()
-    {
-		// Get the growth stage decidest
-		return 1;
+    public void setPlantData(PlantData plantData) {
+        this.plantData = plantData;
     }
 }
