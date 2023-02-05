@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class PlantData
@@ -30,7 +31,16 @@ public class PlantData
 
 	public string RandomizeName()
     {
-		return "PlantNameA";
+		string[] plantfirstNames = { "Sunny", "Green", "Leafy","Fruity","Fruitful","Wild","SUNY", "Daisy"};
+		string[] plantlastNames = { "Morrisville", "Greens", "Lily", "Rose", "Poppy", "Maple", "Oak", "Tiger" };
+        System.Random random = new System.Random();
+
+		string plantName1 = plantfirstNames[random.Next(plantfirstNames.Length)];
+		string plantName2 = plantlastNames[random.Next(plantlastNames.Length)];
+
+		string plantName = plantName1 + " " + plantfirstNames; 
+
+		return plantName;
     }
 
 	public float GetGrowthStage()
@@ -63,7 +73,7 @@ public class PlantData
 	// Increment the age of the plant by number of days passed by DateController.cs
 	public bool IncrementPlantAge(int days) {
 		if (lifeCycle == 0) {
-			lifeCycle = Random.Range(minLifeCycle, maxLifeCycle);
+			lifeCycle = UnityEngine.Random.Range(minLifeCycle, maxLifeCycle);
 			Debug.Log(lifeCycle);
 		}
 
