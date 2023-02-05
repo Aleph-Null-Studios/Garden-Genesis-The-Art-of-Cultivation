@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
-public class dateController : MonoBehaviour
+public class DateController : MonoBehaviour
 {
     /*variables*/
     [SerializeField] TextMeshProUGUI dateText;  //displays the current date
@@ -42,10 +43,17 @@ public class dateController : MonoBehaviour
         curMonth = startMonth;
         curDay = startDay;
 
-        //update the display of the date on screen
-        dateText.text = $"{curMonth}/{curDay}/{curYear}";
+        //set the text on screen
+        DisplayDateText();
 
     }//end of start method
+
+    //Displaytext is called at start and everytime the date changes
+    private void DisplayDateText()
+    {
+        //update the display of the date on screen
+        dateText.text = $"{curMonth}/{curDay}/{curYear}";
+    }//end display date text method
 
 
     //Increase time is called when a button is pressed(onclick). The button will pass through the correct incrememnet of time to be changed. 
@@ -78,8 +86,8 @@ public class dateController : MonoBehaviour
             curYear++;
         }//end month check
 
-        //update the display of the date on screen
-        dateText.text = $"{curMonth}/{curDay}/{curYear}";
+        //update the text on screen
+        DisplayDateText();
 
     }//end of increase time method
 
@@ -87,7 +95,7 @@ public class dateController : MonoBehaviour
     public int GetTotalDays()
     {
         return totalDays;
-    }
+    }//end get total day method
 
 
 }//end of class 
