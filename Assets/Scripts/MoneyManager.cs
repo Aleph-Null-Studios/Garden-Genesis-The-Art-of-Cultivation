@@ -7,7 +7,7 @@ using System;
 public class MoneyManager : MonoBehaviour
 {
     /*Variables*/
-    [SerializeField] TextMeshProUGUI currancyBalanceText;  //displays the current balance/ammount of money the player has
+    [SerializeField] TextMeshProUGUI currencyBalanceText;  //displays the current balance/ammount of money the player has
 
     int startingBalance = 350;    //how much money the player starts with
     int currnetBalance;           //how much money the player currently has
@@ -28,7 +28,7 @@ public class MoneyManager : MonoBehaviour
     //display balance text is called at the start and also when the balance changes
     private void DisplayBalance()
     {
-        currancyBalanceText.text = $"{currancyBalanceText}";
+        currencyBalanceText.text = $"{currencyBalanceText}";
     }//end display balance tmethod
 
     //this method is called whenever a player chooses to sell a plant
