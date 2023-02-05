@@ -17,6 +17,7 @@ public class PlantBreeder : MonoBehaviour
 
     public GameObject parent1Image;
     public GameObject parent2Image;
+    public GameObject breedingResultsImage;
 
     public GameObject breedMenu;
     public GameObject mainMenu;
@@ -62,6 +63,11 @@ public class PlantBreeder : MonoBehaviour
         plantManager.userPlants.Add(babyPlant);
         Debug.Log(babyPlant.flowerColor);
 
+        breedingResultsImage.GetComponent<Image>().sprite = babyPlant.flowerSprite;
+        breedingResultsImage.GetComponent<Image>().color = babyPlant.flowerColor;
+        breedingResultsImage.GetComponentInChildren<TextMeshProUGUI>().text = babyPlant.name;
+        breedingResultsImage.GetComponentInChildren<TextMeshProUGUI>().enabled = true;
+
         // Set parents to null.
         parent1 = null;
         parent2 = null;
@@ -87,6 +93,7 @@ public class PlantBreeder : MonoBehaviour
         breedMenu.SetActive(false);
         GetComponent<GardenManager>().SetPlant();
         HidePlants();
+        ClearButtons();
     }
 
     void ShowPlants() {
@@ -121,6 +128,9 @@ public class PlantBreeder : MonoBehaviour
     void ClearButtons() {
         parent2Image.GetComponent<Image>().sprite = null;
         parent2Image.GetComponent<Image>().color = Color.white;
+        breedingResultsImage.GetComponent<Image>().sprite = null;
+        breedingResultsImage.GetComponent<Image>().color = Color.white;
+        breedingResultsImage.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
     }
     #endregion
 }
