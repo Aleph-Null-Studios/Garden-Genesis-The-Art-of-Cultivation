@@ -35,10 +35,10 @@ public class PlantData
 		string[] plantlastNames = { "Morrisville", "Greens", "Lily", "Rose", "Poppy", "Maple", "Oak", "Tiger" };
         System.Random random = new System.Random();
 
-		string plantName1 = plantfirstNames[random.Next(plantfirstNames.Length)];
-		string plantName2 = plantlastNames[random.Next(plantlastNames.Length)];
+		string plantName1 = plantfirstNames[random.Next(plantfirstNames.Length - 1)];
+		string plantName2 = plantlastNames[random.Next(plantlastNames.Length - 1)];
 
-		string plantName = plantName1 + " " + plantfirstNames; 
+		string plantName = plantName1 + " " + plantName2; 
 
 		return plantName;
     }
