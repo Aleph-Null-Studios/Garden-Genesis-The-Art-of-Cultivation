@@ -2693,6 +2693,7 @@ GameObject:
   - component: {fileID: 1111621757}
   - component: {fileID: 1111621758}
   - component: {fileID: 1111621759}
+  - component: {fileID: 1111621760}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2743,7 +2744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantPrefab: {fileID: 0}
   defaultPlants:
-  - name: Im strokin my dick rn
+  - name: Daisy
     flowerColor: {r: 1, g: 0.8598435, b: 0, a: 0}
     flowerSprite: {fileID: 21300000, guid: 54f890c59db75af49b50a0d719320abf, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
@@ -2755,7 +2756,7 @@ MonoBehaviour:
     minSize: 2
     size: 1
     sizeIncrement: 0.2
-  - name: I Got lotion on my dick rn
+  - name: Rose
     flowerColor: {r: 1, g: 0, b: 0, a: 1}
     flowerSprite: {fileID: 21300000, guid: 4a315a24ea5ad0d42a8e2ab81f573711, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
@@ -2816,6 +2817,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyBalanceText: {fileID: 1192644130}
+--- !u!114 &1111621760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111621754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfddca6ecbb8004398c333a9a557d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent1:
+    name: a
+    flowerColor: {r: 0.80154467, g: 1, b: 0.19607842, a: 1}
+    flowerSprite: {fileID: 21300000, guid: 4a315a24ea5ad0d42a8e2ab81f573711, type: 3}
+    stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
+    price: 0
+    daysGrown: 0
+    minLifeCycle: 0
+    maxLifeCycle: 0
+    maxSize: 0
+    minSize: 0
+    size: 0
+    sizeIncrement: 0
+  parent2:
+    name: b
+    flowerColor: {r: 0.40514803, g: 0, b: 1, a: 1}
+    flowerSprite: {fileID: 21300000, guid: d39636356f759864bba624c0824e4786, type: 3}
+    stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
+    price: 0
+    daysGrown: 0
+    minLifeCycle: 0
+    maxLifeCycle: 0
+    maxSize: 0
+    minSize: 0
+    size: 0
+    sizeIncrement: 0
 --- !u!1 &1114782049
 GameObject:
   m_ObjectHideFlags: 0
