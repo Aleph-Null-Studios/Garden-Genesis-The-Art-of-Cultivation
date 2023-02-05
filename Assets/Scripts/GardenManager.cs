@@ -37,7 +37,6 @@ public class GardenManager : MonoBehaviour
                 //Debug.Log(hitInfo.transform.gameObject.name);
                 PlantData plantData = hitInfo.transform.gameObject.GetComponent<Plant>().plantData;
                 if (plantData.name == "") {
-                    // null plant ref.
                     return;
                 }
 

@@ -2256,7 +2256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Biggus Dickus
+  m_text: Plant Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The "Zone"
+  m_text: Suny Days
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2583,6 +2583,7 @@ GameObject:
   - component: {fileID: 1111621755}
   - component: {fileID: 1111621757}
   - component: {fileID: 1111621758}
+  - component: {fileID: 1111621759}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2632,7 +2633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantPrefab: {fileID: 0}
   defaultPlants:
-  - name: Im Strokin my dick
+  - name: Daisy
     flowerColor: {r: 1, g: 0.8598435, b: 0, a: 0}
     flowerSprite: {fileID: 21300000, guid: 54f890c59db75af49b50a0d719320abf, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
@@ -2644,7 +2645,7 @@ MonoBehaviour:
     minSize: 2
     size: 1
     sizeIncrement: 0.2
-  - name: I got lotion on my dick rn
+  - name: Rose
     flowerColor: {r: 1, g: 0, b: 0, a: 1}
     flowerSprite: {fileID: 21300000, guid: 4a315a24ea5ad0d42a8e2ab81f573711, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
@@ -2692,6 +2693,19 @@ MonoBehaviour:
   plantName: {fileID: 982636674}
   plantInfo: {fileID: 1714254849}
   plantPreview: {fileID: 1542234234}
+--- !u!114 &1111621759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111621754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76be841e4c431f4088346ad86d4f469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyBalanceText: {fileID: 1192644130}
 --- !u!1 &1114782049
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,7 +4121,7 @@ GameObject:
   - component: {fileID: 1714254850}
   - component: {fileID: 1714254849}
   m_Layer: 5
-  m_Name: InfoShitIDontFuckingKnow
+  m_Name: PlantDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4153,7 +4167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Plant Price: $'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4494,7 +4508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1764695395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4942,7 +4956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1953353085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: c76be841e4c431f4088346ad86d4f469, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1953353085
 MonoBehaviour:
   m_ObjectHideFlags: 0

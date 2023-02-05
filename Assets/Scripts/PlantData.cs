@@ -29,7 +29,7 @@ public class PlantData
 
 	public string RandomizeName()
     {
-		return "Mine Cocketh and Nuteth";
+		return "PlantNameA";
     }
 
 	public float GetGrowthStage()

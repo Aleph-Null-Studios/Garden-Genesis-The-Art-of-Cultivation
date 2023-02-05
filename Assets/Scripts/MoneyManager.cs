@@ -28,7 +28,7 @@ public class MoneyManager : MonoBehaviour
     //display balance text is called at the start and also when the balance changes
     private void DisplayBalance()
     {
-        currencyBalanceText.text = $"{currencyBalanceText}";
+        currencyBalanceText.text = $"${currnetBalance}";
     }//end display balance tmethod
 
     //this method is called whenever a player chooses to sell a plant
