@@ -2687,6 +2687,8 @@ MonoBehaviour:
   - {fileID: 2117456770}
   plantManager: {fileID: 1111621757}
   GardenUICanvas: {fileID: 1388827580}
+  PopupCard: {fileID: 1804117092}
+  selectedPlant: {fileID: 0}
   plantName: {fileID: 982636674}
   plantInfo: {fileID: 1714254849}
   plantPreview: {fileID: 1542234234}
@@ -4729,7 +4731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1804117093
 RectTransform:
   m_ObjectHideFlags: 0

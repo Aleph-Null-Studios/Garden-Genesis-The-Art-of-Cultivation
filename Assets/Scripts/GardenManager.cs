@@ -10,8 +10,10 @@ public class GardenManager : MonoBehaviour
     // Set plantdata to index of plant manager
     public List<GameObject> gardenPlants;
     [SerializeField] PlantManager plantManager;
-
     [SerializeField] GameObject GardenUICanvas;
+    [SerializeField] GameObject PopupCard;
+
+    [SerializeField] public GameObject selectedPlant;
     [SerializeField] TextMeshProUGUI plantName;
     [SerializeField] TextMeshProUGUI plantInfo;
     [SerializeField] Image plantPreview;
@@ -19,27 +21,37 @@ public class GardenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            Debug.Log("I got lotion on my dick rn");
-            SetPlant();
+        SetPlant();
     }
 
     void Update()
     {
-        doSomething();    
+        SelectPlant();    
     }
 
-    void doSomething() {
+    void SelectPlant() {
         if (Input.GetMouseButtonDown (0)) {
             Vector2 pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
             if(hitInfo) {
-                Debug.Log(hitInfo.transform.gameObject.name);
+                //Debug.Log(hitInfo.transform.gameObject.name);
                 PlantData plantData = hitInfo.transform.gameObject.GetComponent<Plant>().plantData;
                 if (plantData.name == "") {
-                    Debug.Log("I am disabled");
+                    // null plant ref.
                     return;
                 }
 
+                if (selectedPlant == hitInfo.transform.gameObject)
+                {
+                    // Clicked same plant, close window
+                    PopupCard.SetActive(false);
+                    selectedPlant = null;
+                    return;
+                }
+
+                selectedPlant = hitInfo.transform.gameObject;
+
+                PopupCard.SetActive(true);
                 plantPreview.sprite = plantData.flowerSprite;
                 // plantPreview.color = plantData.flowerColor;
                 plantPreview.color = new Color(plantData.flowerColor.r, plantData.flowerColor.g, plantData.flowerColor.b, 255);
@@ -58,7 +70,6 @@ public class GardenManager : MonoBehaviour
         {
             var temp = gardenPlants[i].GetComponent<Plant>();
             temp.plantData = plantManager.userPlants[i];
-            Debug.Log("Im strokin my dick rn" + temp.plantData.name + i);
             temp.RenderPlant();
         }
     }
