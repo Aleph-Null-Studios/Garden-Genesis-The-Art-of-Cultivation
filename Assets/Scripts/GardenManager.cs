@@ -19,8 +19,7 @@ public class GardenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            Debug.Log("I got lotion on my dick rn");
-            SetPlant();
+        SetPlant();
     }
 
     void Update()
@@ -36,7 +35,6 @@ public class GardenManager : MonoBehaviour
                 Debug.Log(hitInfo.transform.gameObject.name);
                 PlantData plantData = hitInfo.transform.gameObject.GetComponent<Plant>().plantData;
                 if (plantData.name == "") {
-                    Debug.Log("I am disabled");
                     return;
                 }
 
@@ -58,7 +56,6 @@ public class GardenManager : MonoBehaviour
         {
             var temp = gardenPlants[i].GetComponent<Plant>();
             temp.plantData = plantManager.userPlants[i];
-            Debug.Log("Im strokin my dick rn" + temp.plantData.name + i);
             temp.RenderPlant();
         }
     }

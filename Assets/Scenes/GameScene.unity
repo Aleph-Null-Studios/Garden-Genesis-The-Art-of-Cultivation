@@ -2583,6 +2583,7 @@ GameObject:
   - component: {fileID: 1111621755}
   - component: {fileID: 1111621757}
   - component: {fileID: 1111621758}
+  - component: {fileID: 1111621759}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2690,6 +2691,19 @@ MonoBehaviour:
   plantName: {fileID: 982636674}
   plantInfo: {fileID: 1714254849}
   plantPreview: {fileID: 1542234234}
+--- !u!114 &1111621759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111621754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76be841e4c431f4088346ad86d4f469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyBalanceText: {fileID: 1192644130}
 --- !u!1 &1114782049
 GameObject:
   m_ObjectHideFlags: 0
