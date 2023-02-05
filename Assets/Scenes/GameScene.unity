@@ -398,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &53537618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1525,7 +1525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &396975281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6171,7 +6171,7 @@ MonoBehaviour:
     flowerColor: {r: 1, g: 1, b: 1, a: 1}
     flowerSprite: {fileID: 21300000, guid: 54f890c59db75af49b50a0d719320abf, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
-    price: 20
+    price: 50
     daysGrown: 30
     minLifeCycle: 90
     maxLifeCycle: 120
@@ -6183,8 +6183,44 @@ MonoBehaviour:
     flowerColor: {r: 0.4716981, g: 0.14417942, b: 0.14417942, a: 1}
     flowerSprite: {fileID: 21300000, guid: 4a315a24ea5ad0d42a8e2ab81f573711, type: 3}
     stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
-    price: 20
+    price: 50
     daysGrown: 30
+    minLifeCycle: 90
+    maxLifeCycle: 120
+    maxSize: 0.5
+    minSize: 2
+    size: 1
+    sizeIncrement: 0.2
+  - name: Violets
+    flowerColor: {r: 0.5188679, g: 0.11454252, b: 0.43931141, a: 1}
+    flowerSprite: {fileID: 21300000, guid: a4c1471fb158ec344ac51d79289950c2, type: 3}
+    stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
+    price: 50
+    daysGrown: 45
+    minLifeCycle: 90
+    maxLifeCycle: 120
+    maxSize: 0.5
+    minSize: 2
+    size: 1
+    sizeIncrement: 0.2
+  - name: Lilac
+    flowerColor: {r: 0.51152533, g: 0.8301887, b: 0.4965468, a: 1}
+    flowerSprite: {fileID: 21300000, guid: b39ea5db79241544c9d3dca0c9b17033, type: 3}
+    stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
+    price: 50
+    daysGrown: 12
+    minLifeCycle: 90
+    maxLifeCycle: 120
+    maxSize: 0.5
+    minSize: 2
+    size: 1
+    sizeIncrement: 0.2
+  - name: Lilly
+    flowerColor: {r: 0.28911853, g: 0.24104661, b: 0.5754717, a: 1}
+    flowerSprite: {fileID: 21300000, guid: b39ea5db79241544c9d3dca0c9b17033, type: 3}
+    stemSprite: {fileID: 21300000, guid: 520318f06a811834092ef50ac62c092e, type: 3}
+    price: 50
+    daysGrown: 12
     minLifeCycle: 90
     maxLifeCycle: 120
     maxSize: 0.5
@@ -6297,7 +6333,9 @@ MonoBehaviour:
   parent2Image: {fileID: 1023489033}
   breedingResultsImage: {fileID: 960564501}
   breedMenu: {fileID: 1106014795}
+  breedBg: {fileID: 1985535510}
   mainMenu: {fileID: 396975280}
+  mainBg: {fileID: 762626578}
 --- !u!114 &1111621761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10702,7 +10740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1804117093
 RectTransform:
   m_ObjectHideFlags: 0

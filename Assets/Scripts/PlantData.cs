@@ -25,7 +25,7 @@ public class PlantData
 		this.flowerSprite = flowerSprite;
 		this.stemSprite = stemSprite;
 		this.daysGrown = daysGrown;
-		this.price = 20;
+		this.price = 50;
 		this.lifeCycle = UnityEngine.Random.Range(minLifeCycle, maxLifeCycle);
 	}
 
