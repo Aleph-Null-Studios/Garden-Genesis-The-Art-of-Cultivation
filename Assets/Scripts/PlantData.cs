@@ -26,7 +26,7 @@ public class PlantData
 		this.stemSprite = stemSprite;
 		this.daysGrown = daysGrown;
 		this.price = 20;
-		this.lifeCycle = Random.Range(minLifeCycle, maxLifeCycle);
+		this.lifeCycle = UnityEngine.Random.Range(minLifeCycle, maxLifeCycle);
 	}
 
 	public string RandomizeName()
